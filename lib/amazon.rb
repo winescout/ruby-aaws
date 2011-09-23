@@ -11,19 +11,6 @@ module Amazon
 
   @@config = {}
 
-  # We're going to have to use String#size if String#bytesize isn't available.
-  # This is for Ruby pre-1.8.7.
-  #
-  # Compatibility with 1.8.6
-  class String
-    if !public_method_defined? :bytesize
-     def bytesize
-       unpack("C*").length
-     end
-    end
-  end
-
-
   # Prints debugging messages and works like printf, except that it prints
   # only when Ruby is run with the -d switch.
   #
