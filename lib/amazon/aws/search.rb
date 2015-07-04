@@ -38,7 +38,7 @@ module Amazon
 
 	# Requests are authenticated using the SHA-256 Secure Hash Algorithm.
 	#
-	DIGEST = OpenSSL::Digest::Digest.new( 'sha256' ) if DIGEST_SUPPORT
+	DIGEST = OpenSSL::Digest.new( 'sha256' ) if DIGEST_SUPPORT
 
 	attr_reader :conn, :config, :locale, :query, :user_agent
 	attr_writer :cache
